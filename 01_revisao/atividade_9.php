@@ -1,25 +1,23 @@
 <?php
 
-function verificarEntrada($idade, $acompanhado) {
-    if ($idade >= 18) {
-        echo "Idade: $idade anos - Entrada liberada!\n";
-    } elseif ($idade >= 14 && $idade <= 17) {
-        if ($acompanhado) {
-            echo "Idade: $idade anos (Acompanhado) - Entrada liberada!\n";
-        } else {
-            echo "Idade: $idade anos (Sem acompanhante) - Entrada proibida. Necessário acompanhante adulto.\n";
-        }
-    } else {
-        
-        echo "Idade: $idade anos - Entrada proibida para menores de 14 anos (mesmo acompanhados).\n";
-    }
+$idade = 15;
+$acompanhada = true;
+
+if($idade >= 18){
+    echo "Entrada liberada!";
 }
-
-
-
-verificarEntrada(20, false);
-verificarEntrada(16, true);  
-verificarEntrada(15, false); 
-verificarEntrada(12, true);  
-
+else if($idade >= 14 && $idade <= 17 && $acompanhada == true){
+    echo "Entrada liberada com acompanhante!";
+}
+else if($idade >= 14 && $idade <= 17 && $acompanhada == false){
+    echo "Entrada negada!";
+}
+else if($idade <= 14 && $acompanhada == true){
+    echo "Entrada negada!";
+}
+else if ($idade <= 14 && $acompanhada == false){
+    echo "Entrada negada!";
+}
+echo "<br> <br> <br >Proibido para menores de 14 anos!";
 ?>
+
