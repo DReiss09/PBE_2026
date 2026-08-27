@@ -10,4 +10,7 @@ echo "Desconto:  " . $pedido["valor_desconto"] . "<br>";
 echo "Imposto: " . $pedido["valor_imposto"] . "<br>";
 echo "Total final:  " . $pedido["total_final"] . "<br>";
 
+$TotalComFrete = calcularPrecoFinal($resultado['totalFinal']);
+echo "Total com Frete" . $TotalComFrete ."<br>"
+
 ?>
