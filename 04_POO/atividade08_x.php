@@ -18,4 +18,14 @@ class Funcionario {
         }
     }
 
+    public function exibirSalario(){
+        echo "Funcionário: $this->nome  -  Salário R$ ". number_format($this->salario, 2,',','.');
+    }
+
  }
+
+ $func = new Funcionario("Carlos", 3000);
+ $func->aumentarSalario(10);
+ $func->exibirSalario();
+
+?>
